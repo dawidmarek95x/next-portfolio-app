@@ -4,10 +4,10 @@ import styles from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.scss";
 import Link from "next/link";
 
-const name = "Dawid Marek";
-export const siteTitle = "Portfolio";
+let name = "Dawid Marek";
+export let siteTitle = "Portfolio";
 
-const Layout = ({ children, home }) => {
+const Layout = ({ children, home }: {children: React.ReactNode, home?: boolean }) => {
   return (
     <div className={styles.container}>
       <Head>

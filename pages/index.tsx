@@ -3,8 +3,18 @@ import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.scss";
 import { getSortedProjectsData } from "../lib/projects";
+import { GetStaticProps } from "next";
+import { ProjectWithId } from "../types/projects";
 
-const Home = ({ allProjectsData }) => {
+interface ProjectsData {
+  allProjectsData: ProjectWithId[];
+}
+
+interface HomeProps {
+  props: ProjectsData;
+}
+
+const Home = ({ allProjectsData }: ProjectsData) => {
   return (
     <Layout home>
       <Head>
@@ -20,7 +30,8 @@ const Home = ({ allProjectsData }) => {
         </p>
         <p>
           You can contact me on{" "}
-          <a href="https://www.linkedin.com/in/dawid-marek95/">LinkedIn</a> or by{" "}<a href="mailto:dawid.marek@gmail.com">email</a>.
+          <a href="https://www.linkedin.com/in/dawid-marek95/">LinkedIn</a> or
+          by <a href="mailto:dawid.marek@gmail.com">email</a>.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -30,9 +41,7 @@ const Home = ({ allProjectsData }) => {
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/projects/${id}`}>{title}</Link>
               <br />
-              <small className={utilStyles.lightText}>
-                {stack}
-              </small>
+              <small className={utilStyles.lightText}>{stack}</small>
             </li>
           ))}
         </ul>
@@ -43,7 +52,7 @@ const Home = ({ allProjectsData }) => {
 
 export default Home;
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (): Promise<HomeProps> => {
   const allProjectsData = getSortedProjectsData();
 
   return {

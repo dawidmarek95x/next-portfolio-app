@@ -1,10 +1,24 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { NextApiRequest, NextApiResponse } from "next";
+
+interface Project {
+  title: string;
+  stack: string;
+  date: string;
+}
+
+interface ProjectsHandlerResponse {
+  projects: string[];
+}
 
 const projectsDirectory = path.join(process.cwd(), "projects");
 
-export default function projectsHandler(_, res) {
+export default function projectsHandler(
+  _: NextApiRequest,
+  res: NextApiResponse<ProjectsHandlerResponse>
+) {
   const fileNames = fs.readdirSync(projectsDirectory);
   const allProjectsData = fileNames.map((fileName) => {
     const fullPath = path.join(projectsDirectory, fileName);
@@ -13,7 +27,7 @@ export default function projectsHandler(_, res) {
     const matterResult = matter(fileContents);
 
     return {
-      ...matterResult.data,
+      ...(matterResult.data as Project),
     };
   });
 

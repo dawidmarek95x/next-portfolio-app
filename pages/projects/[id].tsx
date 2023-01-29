@@ -2,8 +2,16 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import utilStyles from "../../styles/utils.module.scss";
 import { getAllProjectIds, getProjectData } from "../../lib/projects";
+import { GetStaticPaths, GetStaticProps } from "next";
 
-const Project = ({ projectData }) => {
+interface ProjectData {
+  projectData: {
+    title: string;
+    contentHtml: string;
+  };
+}
+
+const Project = ({ projectData }: ProjectData) => {
   return (
     <Layout>
       <Head>
@@ -19,7 +27,7 @@ const Project = ({ projectData }) => {
 
 export default Project;
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllProjectIds();
   return {
     paths,
@@ -27,8 +35,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const projectData = await getProjectData(params.id);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const projectData = await getProjectData(params?.id as string);
   return {
     props: {
       projectData,

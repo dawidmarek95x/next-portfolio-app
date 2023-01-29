@@ -3,6 +3,13 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { Project } from "../types/projects";
+
+export interface ProjectParams {
+  params: {
+    id: string;
+  };
+}
 
 const projectsDirectory = path.join(process.cwd(), "projects");
 
@@ -24,7 +31,7 @@ export function getSortedProjectsData() {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...(matterResult.data as Project),
     };
   });
 
@@ -38,26 +45,7 @@ export function getSortedProjectsData() {
   });
 }
 
-// API (example)
-// export async function getSortedProjectsData() {
-//   // Instead of the file system,
-//   // fetch project data from an external API endpoint
-//   const res = await fetch('..');
-//   return res.json();
-// }
-
-// Database (example)
-// import someDatabaseSDK from 'someDatabaseSDK'
-
-// const databaseClient = someDatabaseSDK.createClient(...)
-
-// export async function getSortedProjectsData() {
-//   // Instead of the file system,
-//   // fetch project data from a database
-//   return databaseClient.query('SELECT projects...')
-// }
-
-export function getAllProjectIds() {
+export function getAllProjectIds(): ProjectParams[] {
   const fileNames = fs.readdirSync(projectsDirectory);
 
   return fileNames.map((fileName) => {
@@ -69,22 +57,7 @@ export function getAllProjectIds() {
   });
 }
 
-// API (example)
-// export async function getAllProjectIds() {
-//   // Instead of the file system,
-//   // fetch project data from an external API endpoint
-//   const res = await fetch('..');
-//   const projects = await res.json();
-//   return projects.map((project) => {
-//     return {
-//       params: {
-//         id: project.id,
-//       },
-//     };
-//   });
-// }
-
-export async function getProjectData(id) {
+export async function getProjectData(id: string) {
   const fullPath = path.join(projectsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -101,6 +74,6 @@ export async function getProjectData(id) {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    ...(matterResult.data as Project),
   };
 }
