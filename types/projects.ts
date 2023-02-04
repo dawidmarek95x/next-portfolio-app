@@ -6,4 +6,4 @@ export interface Project {
 
 export type ProjectWithId = Project & {
   id: string;
-}
+};

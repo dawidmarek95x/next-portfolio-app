@@ -1,7 +1,7 @@
 ---
-title: 'Filmoteka'
-stack: 'JavaSript, Firebase, Axios, SASS, HTML5'
-date: '2022-08-26'
+title: "Filmoteka"
+stack: "JavaSript, Firebase, Axios, SASS, HTML5"
+date: "2022-08-26"
 ---
 
 Responsive website project, to search for the most popular movies currently in accordance with the user's query, and then the ability to add them to your personal library.
@@ -15,6 +15,7 @@ JavaSript, Firebase, SASS, HTML5
 ## Team members:
 
 **Frontend Developers:**
+
 - Anna Ojdana
 - Bartłomiej Kita
 - Dawid Marek

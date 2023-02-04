@@ -1,7 +1,7 @@
 ---
-title: 'Movies Info'
-stack: 'React, React Router, JavaSript, Styled-Components, SASS, Axios, HTML5'
-date: '2022-10-05'
+title: "Movies Info"
+stack: "React, React Router, JavaSript, Styled-Components, SASS, Axios, HTML5"
+date: "2022-10-05"
 ---
 
 A single-page application project used to search for detailed information about movies of interest to the user.
@@ -13,6 +13,7 @@ A single-page application project used to search for detailed information about 
 React, Redux, React Router, JavaSript, Styled-Components, SASS, Axios, HTML5
 
 ## Requirements
+
 Implementation of the application according to the required criteria using functional components together with React Hooks and the use of React Router to perform the basic routing for the application.
 
 **Criteria:**
