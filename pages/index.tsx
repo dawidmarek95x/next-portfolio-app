@@ -22,11 +22,14 @@ const Home = ({ allProjectsData }: ProjectsData) => {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Hello, I am Dawid. I am a Junior Full-Stack Developer dealing with
-          designing and building web applications using React, Redux,
-          TypeScript, JavaScript, Styled Components, SASS/CSS3, HTML5 on the
-          client side and Node.js, Express.js, MongoDB on the server side in
-          accordance with current standards.
+          Hello, I am Dawid. I am a Junior Full-Stack Developer dealing with the
+          design and construction of web applications both on the client and
+          server side in accordance with applicable standards.
+        </p>
+        <p>
+          The technological stack that I use to create applications is: Next.js,
+          React, Redux, Node.js, Express.js, TypeScript, JavaScript, MongoDB,
+          Styled Components, SASS/CSS3 and HTML5.
         </p>
         <p>
           You can contact me on{" "}

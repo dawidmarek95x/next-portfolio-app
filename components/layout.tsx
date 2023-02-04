@@ -7,15 +7,18 @@ import Link from "next/link";
 let name = "Dawid Marek";
 export let siteTitle = "Portfolio";
 
-const Layout = ({ children, home }: {children: React.ReactNode, home?: boolean }) => {
+const Layout = ({
+  children,
+  home,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
+}) => {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/dm.ico" />
-        <meta
-          name="description"
-          content="Dawid Marek's Portfolio"
-        />
+        <meta name="description" content="Dawid Marek's Portfolio" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
