@@ -29,7 +29,8 @@ const Home = ({ allProjectsData }: ProjectsData) => {
         <p>
           The technological stack that I use to create applications is: Next.js,
           React, Redux, Nest.js, Node.js, Express.js, TypeScript, JavaScript,
-          MongoDB, Styled Components, SASS/CSS3 and HTML5.
+          MongoDB, Tailwind CSS, Bootstrap, Styled Components, SASS/CSS3 and
+          HTML5.
         </p>
         <p>
           You can contact me on{" "}
