@@ -1,6 +1,6 @@
 ---
 title: "Phonebook App"
-stack: "React, Redux, React Router, JavaSript, Styled-Components, SASS, HTML5"
+stack: "React, Redux, React Router, JavaSript, Styled-Components, SASS, CSS3, HTML5"
 date: "2022-10-10"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Filmoteka"
-stack: "JavaSript, Firebase, Axios, SASS, HTML5"
+stack: "JavaSript, Firebase, Axios, SASS, CSS3, HTML5"
 date: "2022-08-26"
 ---
 

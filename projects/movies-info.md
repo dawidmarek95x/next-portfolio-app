@@ -1,6 +1,6 @@
 ---
 title: "Movies Info"
-stack: "React, React Router, JavaSript, Styled-Components, SASS, Axios, HTML5"
+stack: "React, Redux, React Router, JavaSript, Axios, Styled-Components, SASS, CSS3, HTML5"
 date: "2022-10-05"
 ---
 
@@ -10,7 +10,7 @@ A single-page application project used to search for detailed information about 
 
 ## Technologies
 
-React, Redux, React Router, JavaSript, Styled-Components, SASS, Axios, HTML5
+React, Redux, React Router, JavaSript, Axios, Styled-Components, SASS, CSS3, HTML5
 
 ## Requirements
 
